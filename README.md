@@ -52,41 +52,51 @@
 ## 🚀 Быстрый старт (Getting Started)
 
 ### Предварительные требования
-- Python 3.10 или выше
-- Windows 10/11 с доступом к командной строке
+- **Python 3.10+**
+- **Ollama** (установленная и запущенная локально)
+- Windows 10/11 с доступом к PowerShell или командной строке (CMD)
+
+---
 
 ### Установка и запуск
 
 1. **Клонируйте репозиторий:**
 bash
 
-git clone https://github.com/<nogcoJlHyx>/<Local-LLM-Telegram-Bot-xam-preparation>.git
+git clone https://github.com/nogcoJlHyx/Local-LLM-Telegram-Bot-exam-preparation.git
 
-cd <Local-LLM-Telegram-Bot-xam-preparation>
+cd Local-LLM-Telegram-Bot-exam-preparation
 
 2. **Создайте и активируйте виртуальное окружение:**
 cmd
 
-python -m venv venv
+python -m venv .venv
 
-venv\Scripts\activate
+.venv\Scripts\activate
 
 3. **Установите зависимости:**
 cmd
 
 pip install -r requirements.txt
 
-4. **Настройте переменные окружения:**
-   Создайте файл `.env` на основе примера:
-cmd
-copy.env.example .env
-Укажите ваш `BOT_TOKEN` и параметры модели.
-
-5. **Запустите проект:**
-   
+4. **Загрузите модель в Ollama:**
 cmd
 
-python main.py
+ollama pull qwen2.5:1.5b
+
+   *(Опционально: создайте кастомную модель через Modelfile: `ollama create exam_checker -f Modelfile`)*
+
+5. **Настройте переменные окружения:**
+cmd
+
+copy .env.example .env
+   Откройте `.env` и укажите ваш `BOT_TOKEN` от Telegram BotFather, а также свой Telegram ID в списке `ALLOWED_USERS` в `bot.py`.
+
+6. **Запустите бота:**
+cmd
+
+python bot.py
+
 ---
 
 ## 📁 Структура проекта (Architecture)
