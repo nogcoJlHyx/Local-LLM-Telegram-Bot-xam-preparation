@@ -58,4 +58,50 @@
 ### Установка и запуск
 
 1. **Клонируйте репозиторий:**
+bash
+
+git clone https://github.com/<nogcoJlHyx>/<Local-LLM-Telegram-Bot-xam-preparation>.git
+
+cd <Local-LLM-Telegram-Bot-xam-preparation>
+
+2. **Создайте и активируйте виртуальное окружение:**
+cmd
+
+python -m venv venv
+
+venv\Scripts\activate
+
+3. **Установите зависимости:**
+cmd
+
+pip install -r requirements.txt
+
+4. **Настройте переменные окружения:**
+   Создайте файл `.env` на основе примера:
+cmd
+copy.env.example .env
+Укажите ваш `BOT_TOKEN` и параметры модели.
+
+5. **Запустите проект:**
    
+cmd
+
+python main.py
+---
+
+## 📁 Структура проекта (Architecture)
+text
+
+├── assets/ # Скриншоты и схемы
+
+├── bot/ # Обработчики Telegram-событий
+
+├── core/ # Интеграция с локальной LLM и логика MCP
+
+├── services/ # Интеграция с CRM и аналитика OTIF
+
+├── config.py # Конфигурация и переменные среды
+
+├── requirements.txt # Список библиотек
+
+└── main.py # Точка входа
