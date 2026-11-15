@@ -92,16 +92,26 @@ python main.py
 ## 📁 Структура проекта (Architecture)
 text
 
-├── assets/ # Скриншоты и схемы
+Local-LLM-Telegram-Bot-exam-preparation/
 
-├── bot/ # Обработчики Telegram-событий
+├── assets/ # Медиафайлы, скриншоты диалогов и демонстрация для гитхаба
 
-├── core/ # Интеграция с локальной LLM и логика MCP
+│ └── demo.png # Скриншот демонстрации работы экзаменатора
 
-├── services/ # Интеграция с CRM и аналитика OTIF
+├── .env.example # Шаблон переменных окружения (токен Telegram, URL инференса)
 
-├── config.py # Конфигурация и переменные среды
+├── .gitignore # Исключение конфиденциальных данных (.env) и виртуального окружения (.venv)
 
-├── requirements.txt # Список библиотек
+├── Modelfile # Конфигурация локальной модели (системные промпты и параметры для Ollama)
 
-└── main.py # Точка входа
+├── bot.py # Основная точка входа бота: FSM, диспетчеризация aiogram и обработка сообщений
+
+├── checker.py # Двухуровневый модуль валидации ответов: Fast Checks (Regex) + Ollama API
+
+├── questions.json # База экзаменационных вопросов с критериями проверки и ключами оценивания
+
+└── requirements.txt # Зависимости проекта (aiogram, requests, python-dotenv)
+
+## 👤 Автор (Author)
+- GitHub: [@nogcoJlHyx](https://github.com/nogcoJlHyx)
+- Telegram: [@nodcoJlHyx](https://t.me/nodcoJlHyx)
