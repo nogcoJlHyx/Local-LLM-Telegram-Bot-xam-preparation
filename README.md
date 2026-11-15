@@ -14,16 +14,31 @@
 
 ---
 
-## 🛠 Стек технологий (Tech Stack)
+## 🛠 Tech Stack & Architecture
 
-| Категория | Инструменты / Технологии |
-| :--- | :--- |
-| **Язык** | Python 3.10+ |
-| **AI / LLM** | Local LLM, MCP (Model Context Protocol) |
-| **Интерфейс** | Telegram Bot API |
-| **Среда / ОС** | Windows Console / PowerShell |
-| **Бизнес-логика** | CRM Integration, OTIF tracking |
+### Backend & Core
+- **Language:** Python 3.10+
+- **Asynchronous Framework:** `asyncio` (non-blocking I/O, background thread delegation via `asyncio.to_thread`)
+- **HTTP & Networking:** `aiohttp` (custom session timeout management), `requests`
 
+### Telegram Bot Framework
+- **Framework:** `aiogram 3.x`
+- **Architecture & State Management:** FSM (Finite State Machine) with `MemoryStorage`
+- **Security & Access Control:** Custom outer middleware (`access_middleware`) for strict whitelist filtering by Telegram User ID
+- **UX & Formatting:** HTML parse mode, automated chunking for long-form messages (>4000 chars)
+
+### AI & LLM Integration
+- **Engine / Runtime:** [Ollama](https://ollama.com/) (local inference API)
+- **Model:** `Qwen 2.5 (1.5B)` fine-tuned/prompted via custom `Modelfile`
+- **Prompt Engineering & Validation:** Structured JSON Output enforcement (`format: "json"`, temperature 0), fallback regex JSON parser, regex-based numeric and entity guards
+- **Hybrid Verification Pipeline:** 
+  - Fast-path deterministic evaluation (exact match, rule-based extraction, unit normalization)
+  - LLM semantic inference for open-ended professional/customs exam answers
+
+### Configuration & Data Management
+- **Environment Management:** `python-dotenv`
+- **Data Serialization:** JSON (`questions.json` dataset with strict validation schemas)
+  
 ---
 
 ## 🖼 Демонстрация (Demo)
