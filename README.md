@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white" alt="Python 3.10+" />
+  <img src="https://img.shields.io/badge/aiogram-3.x-2CA5E0?logo=telegram&logoColor=white" alt="aiogram 3.x" />
+  <img src="https://img.shields.io/badge/LLM-Qwen_2.5_(1.5B)-orange?logo=ollama&logoColor=white" alt="Qwen 2.5 1.5B" />
+  <img src="https://img.shields.io/badge/Inference-Ollama-black?logo=ollama&logoColor=white" alt="Ollama Local Inference" />
+  <img src="https://img.shields.io/badge/OS-Windows-0078D6?logo=windows&logoColor=white" alt="Windows" />
+  <img src="https://img.shields.io/badge/Architecture-AsyncIO_%2B_FSM-purple" alt="AsyncIO + FSM" />
+</p>
 # 🤖 Local LLM Telegram Bot & Exam preparationn
 
 > Telegram-бот с локальной языковой моделью для подготовки к экзамену. Срочный проект, реализован за 3 дня.
